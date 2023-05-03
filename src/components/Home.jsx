@@ -3,7 +3,7 @@ import Pokemon from './Pokemon'
 import Sidebar from './Sidebar'
 import UseFetch from "../Hooks/UseFetch";
 import './Home.css'
-import { useNavigate } from "react-router-dom";
+import { useNavigate, NavLink, Link } from "react-router-dom";
 
 function Home() {
     const [url, setUrl] = useState("https://pokeapi.co/api/v2/pokemon");
@@ -16,13 +16,18 @@ function Home() {
     function handleUrl(e) {
       setUrl(e.target.value);
     }
+
   
     return (
       <div>
         <nav className="navbar">
           <ul>
-            <li>Home</li>
-            <li >About</li>
+            
+            <li>
+            <Link to="/Home">Home </Link></li>
+   
+            <li> <Link to="/About">About </Link></li>
+            
           </ul>
         </nav>
       <div className="container">

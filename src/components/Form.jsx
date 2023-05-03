@@ -7,6 +7,9 @@ function Form() {
     const [labelStyle, setLabelStyle] = useState('validLabel');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const navigate = useNavigate();
+
+
     function handleEmail(e) {
         setEmail(e.target.value);
 
@@ -18,11 +21,12 @@ function Form() {
         const regex = /^\D*\d{5}\D*$/;
         if ((email.trim() === '' || !email.includes('@')) || regex.test(password) === false) {
             setStyle('inValid');
-            setLabelStyle('inValidLabel')
+            setLabelStyle('inValidLabel');
         }
         else{
             localStorage.setItem('email', email);
             localStorage.setItem('password', password);
+            navigate('/Home')
             setStyle('valid');
             setLabelStyle('validLabel');
         }

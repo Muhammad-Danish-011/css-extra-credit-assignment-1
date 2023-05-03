@@ -30,6 +30,7 @@ function Form() {
             setStyle('valid');
             setLabelStyle('validLabel');
         }
+
     }
     return (
         <form action="#" className='form'>

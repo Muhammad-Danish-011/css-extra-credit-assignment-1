@@ -18,12 +18,17 @@ function Home() {
     function handleUrl(e) {
       setUrl(e.target.value);
     }
+    function handleLogOut(){
+      localStorage.removeItem('email');
+      localStorage.removeItem('password');
+      navigate("/");
+    }
     return (
       <div>
         <nav className="navbar">
           <ul>
             <li  onClick={handleHomeClick}>Home</li>
-            <li ><Link to="/About">About</Link></li>
+            <li ><Link  className="link" to="/About">About</Link></li>
           </ul>
         </nav>
       <div className="container">
@@ -40,6 +45,7 @@ function Home() {
         </div>
         <Pokemon name={activePokemon} />
       </div>
+      <button className="log-out" onClick={handleLogOut}>Log out</button>
       </div>
     );
 }

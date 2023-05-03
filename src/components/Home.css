@@ -3,13 +3,24 @@
   height: 5vh;
   width: 90%;
   margin:20px auto;
+  background: rgba(118, 153, 224, 0.759);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(7.1px);
+  -webkit-backdrop-filter: blur(7.1px);
+  border: 5px solid #3761a7;
   
 
 }
+.link{
+  text-decoration: none;
+  color: black;
+}
 .navbar ul li{
+
   display: inline-block;
-  padding-inline: 10px;
-  padding-top: 20px;
+   padding-inline: 10px;
+ /* padding-top: 20px; */
   font-size: 1.3em;
   cursor: pointer;
 }

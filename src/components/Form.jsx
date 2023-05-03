@@ -1,5 +1,6 @@
-import React from 'react'
-import { useState } from 'react'
+import React from 'react';
+import { useState } from 'react';
+import { Routes, useNavigate } from 'react-router-dom' ;
 
 function Form() {
     const [style, setStyle] = useState('valid');
@@ -18,6 +19,12 @@ function Form() {
         if ((email.trim() === '' || !email.includes('@')) || regex.test(password) === false) {
             setStyle('inValid');
             setLabelStyle('inValidLabel')
+        }
+        else{
+            localStorage.setItem('email', email);
+            localStorage.setItem('password', password);
+            setStyle('valid');
+            setLabelStyle('validLabel');
         }
     }
     return (
@@ -39,7 +46,7 @@ function Form() {
                 value={password}
                 onChange={handlePassword}
                 className={`${style} inputField`} />
-            <button onClick={handleForm} type="submit" className='btn'>Submit</button>
+            <button onClick={handleForm} type="submit" className='btn'>LOGIN</button>
         </form>
     )
 }
